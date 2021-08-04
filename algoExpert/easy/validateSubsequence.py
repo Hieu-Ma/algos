@@ -39,3 +39,20 @@ def isValidSubsequence(array, sequence):
 		if len(sequence) == 0: return True
 	return False
     # pass
+
+"""
+Optimal Solution O(n) time | O(1) space
+
+def isValidSubsequence(array, sequence):
+    # Write your code here.
+	seqIdx = 0
+	print(len(sequence))
+	for value in array:
+		if seqIdx == len(sequence):
+			break
+		if sequence[seqIdx] == value:
+			seqIdx += 1
+    return seqIdx == len(sequence)
+
+
+"""
