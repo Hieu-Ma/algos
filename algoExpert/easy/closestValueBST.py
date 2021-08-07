@@ -32,17 +32,33 @@ Pseudo Code
 """
 
 def findClosestValueInBst(tree, target):
-	closestValue = 300
-	currentNode = tree.value
-	while (currentNode is not None):
-		if abs(target - currentNode) < closestValue:
-			closestValue = currentNode
-		if currentNode > target:
+	# return findClosestValueInBstHelper(tree, target)
+	currentNode = tree
+	closestValue = tree.value
+	while currentNode is not None:
+		if abs(target - currentNode.value) < abs(closestValue - target):
+			closestValue = currentNode.value
+		if currentNode.value > target:
 			currentNode = currentNode.left
-		if currentNode < target:
+		elif currentNode.value < target:
 			currentNode = currentNode.right
+		else:
+			break
 	return closestValue
 
+def findClosestValueInBstHelper(tree, target):
+	currentNode = tree
+	closestValue = tree.value
+	while currentNode is not None:
+		if abs(target - currentNode.value) < abs(closestValue - target):
+			closestValue = currentNode.value
+		if currentNode.value > target:
+			currentNode = currentNode.left
+		elif currentNode.value < target:
+			currentNode = currentNode.right
+		else:
+			break
+	return closestValue
 
 # This is the class of the input tree. Do not edit.
 class BST:
