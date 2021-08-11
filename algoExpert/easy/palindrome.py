@@ -32,9 +32,23 @@ Pseudo Code
 		newStr.append(string[i])
 	return newStr == string
 """
+
+# def isPalindrome(string):
+#     # Write your code here.
+# 	newStr = ''
+# 	for i in range(len(string) - 1, -1, -1):
+# 		newStr += string[i]
+# 	return newStr == string
+
+
 def isPalindrome(string):
     # Write your code here.
-	newStr = ''
-	for i in range(len(string) - 1, -1, -1):
-		newStr += string[i]
-	return newStr == string
+    left = 0
+	right = len(string) - 1
+
+	while left < right:
+		if string[left] != string[right]:
+			return False
+		left += 1
+		right -= 1
+	return True
