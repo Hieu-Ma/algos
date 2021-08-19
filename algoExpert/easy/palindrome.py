@@ -32,7 +32,7 @@ Pseudo Code
 		newStr.append(string[i])
 	return newStr == string
 """
-
+""" test"""
 # def isPalindrome(string):
 #     # Write your code here.
 # 	newStr = ''
